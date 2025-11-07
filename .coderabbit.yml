@@ -1,0 +1,48 @@
+# CodeRabbit configuration for Next.js + TypeScript project
+
+language: typescript
+
+review:
+  level: detailed               # "basic", "standard", or "detailed"
+  explanations: true             # Include explanations for suggestions
+  suggestions: true              # Provide suggested code fixes
+  style_guidelines: true         # Enforce code style (naming, spacing, etc.)
+  security_checks: true          # Check for common security issues (e.g., XSS)
+  performance_tips: true         # Suggest performance improvements
+  architecture_feedback: true    # Give higher-level feedback on project structure
+  comment_mode: inline           # "inline" comments directly in PRs
+
+ignore:
+  - node_modules/
+  - .next/
+  - dist/
+  - build/
+  - coverage/
+  - public/
+  - "*.test.ts"
+  - "*.spec.ts"
+  - "*.test.tsx"
+  - "*.spec.tsx"
+
+context:
+  framework: nextjs              # Helps CodeRabbit give framework-specific advice
+  libraries:
+    - react
+    - next-auth
+    - prisma
+    - tailwindcss
+    - axios
+    - zod
+
+tone:
+  friendly: true                 # Keep feedback positive and constructive
+
+auto_review:
+  on_pull_request: true
+  on_push_to_main: false         # Only review code changes in PRs
+
+exclude_generated_code: true     # Skip auto-generated code (like Prisma client)
+
+security:
+  secrets_scan: true             # Warn if API keys or secrets are exposed
+  dependency_audit: true         # Suggest dependency updates with known vulnerabilities
